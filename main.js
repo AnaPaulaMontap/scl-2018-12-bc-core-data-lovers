@@ -1,10 +1,10 @@
-     // Mostrar Pokemones
+// Mostrar Pokemones
 
 const datashow = document.querySelector('#root')
 fetch("data/pokemon/pokemon.json")
 .then (data=> data.json())
 .then(data => {
-   principalPage(data)
+   principalPage (data)
    
 })
 
@@ -12,23 +12,21 @@ principalPage = (data) => {
 //principal.innerHTML = "";
 if (Array.isArray(data.pokemon)) {
    for (let valor of data.pokemon) {
-       //console.log(valor.name)
+       
        root.innerHTML += `
-              
-       <div class = "col-md-2">
-       <div class = "card mb-2 shadow-sm">
-       <img class = "card-img-top" src ="${valor.img}"alt = "Card ${valor.name}">
-       <div class = "d-flex justify-content-between align-items-center">
-       <button class="btn btn-info w-100" data-toggle="modal" data-target="#miModal">${valor.name}</button>
-           </div>
-         </div> 
-      </div> 
-    
+       <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>
   `
    }
 }
 }
-
 
 // FIltrado
 
@@ -49,14 +47,15 @@ grass = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-           <div class = "col-md-2">
-       <div class = "card mb-2 shadow-sm">
-       <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-       <div class = "d-flex justify-content-between align-items-center">
-       <a  data-toggle="modal" href="modal()" class = "bg-info text-white text-center w-100"> ${valor.name} </a> 
-       </div> 
-      </div> 
-  </div>  
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>
         
         `
        }
@@ -80,14 +79,15 @@ poison = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-           <div class = "col-md-2">
-       <div class = "card mb-2 shadow-sm">
-       <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-       <div class = "d-flex justify-content-between align-items-center">
-       <a  data-toggle="modal" href="modal()" class = "bg-info text-white text-center w-100"> ${valor.name} </a> 
-       </div> 
-      </div> 
-  </div> `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
        }
    }
 })
@@ -108,14 +108,15 @@ fire = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-               <div class = "col-md-2">
-                 <div class = "card mb-2 shadow-sm">
-                 <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                 <div class = "d-flex justify-content-between align-items-center">
-                 <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                 </div> 
-                </div> 
-            </div> `
+           <div class = "card"
+           style = "width: 10rem;" >
+               <div class = "card-body" >
+               <h5 class = "card-title" > ${valor.name} </h5> 
+               <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+               <p class = "card-text" > <img class = "card-img"
+           src = "${valor.img}"
+           alt = "Card ${valor.img}"> </p> 
+           </div> </div> `
        }
    }
 })
@@ -136,14 +137,15 @@ flying = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                   <div class = "col-md-2">
-                     <div class = "card mb-2 shadow-sm">
-                     <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                     <div class = "d-flex justify-content-between align-items-center">
-                     <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                     </div> 
-                    </div> 
-                </div> `
+           <div class = "card"
+           style = "width: 10rem;" >
+               <div class = "card-body" >
+               <h5 class = "card-title" > ${valor.name} </h5> 
+               <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+               <p class = "card-text" > <img class = "card-img"
+           src = "${valor.img}"
+           alt = "Card ${valor.img}"> </p> 
+           </div> </div>`
        }
    }
 })
@@ -165,14 +167,15 @@ water = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                       <div class = "col-md-2">
-                         <div class = "card mb-2 shadow-sm">
-                         <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                         <div class = "d-flex justify-content-between align-items-center">
-                         <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                         </div> 
-                        </div> 
-                    </div> `
+           <div class = "card"
+           style = "width: 10rem;" >
+               <div class = "card-body" >
+               <h5 class = "card-title" > ${valor.name} </h5> 
+               <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+               <p class = "card-text" > <img class = "card-img"
+           src = "${valor.img}"
+           alt = "Card ${valor.img}"> </p> 
+           </div> </div> `
        }
    }
 })
@@ -194,14 +197,15 @@ bug = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                           <div class = "col-md-2">
-                             <div class = "card mb-2 shadow-sm">
-                             <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                             <div class = "d-flex justify-content-between align-items-center">
-                             <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                             </div> 
-                            </div> 
-                        </div> `
+           <div class = "card"
+           style = "width: 10rem;" >
+               <div class = "card-body" >
+               <h5 class = "card-title" > ${valor.name} </h5> 
+               <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+               <p class = "card-text" > <img class = "card-img"
+           src = "${valor.img}"
+           alt = "Card ${valor.img}"> </p> 
+           </div> </div> `
        }
    }
 })
@@ -223,16 +227,15 @@ normal = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-           <div class="col-lg-2 col-md-3 col-xs-5 ">
-           <a href="${valor.img}" class="fancybox" rel="ligthbox">
-               <img  src="${valor.img}" class="zoom img-fluid "  alt="">
-              
-           </a>
-       </div>
-           
-           
-           
-           `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
        }
    }
 })
@@ -253,14 +256,15 @@ electric = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-           <div class = "col-md-2">
-                                     <div class = "card mb-2 shadow-sm">
-                                     <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                     <div class = "d-flex justify-content-between align-items-center">
-                                     <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                     </div> 
-                                    </div> 
-                                </div>`
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>`
        }
    }
 })
@@ -281,14 +285,15 @@ ground = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                                   <div class = "col-md-2">
-                                     <div class = "card mb-2 shadow-sm">
-                                     <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                     <div class = "d-flex justify-content-between align-items-center">
-                                     <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                     </div> 
-                                    </div> 
-                                </div> `
+           <div class = "card"
+           style = "width: 10rem;" >
+               <div class = "card-body" >
+               <h5 class = "card-title" > ${valor.name} </h5> 
+               <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+               <p class = "card-text" > <img class = "card-img"
+           src = "${valor.img}"
+           alt = "Card ${valor.img}"> </p> 
+           </div> </div>`
        }
    }
 })
@@ -310,14 +315,15 @@ fighting = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                                       <div class = "col-md-2">
-                                         <div class = "card mb-2 shadow-sm">
-                                         <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                         <div class = "d-flex justify-content-between align-items-center">
-                                         <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                         </div> 
-                                        </div> 
-                                    </div> `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>`
        }
    }
 })
@@ -338,14 +344,15 @@ psychic = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                                       <div class = "col-md-2">
-                                         <div class = "card mb-2 shadow-sm">
-                                         <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                         <div class = "d-flex justify-content-between align-items-center">
-                                         <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                         </div> 
-                                        </div> 
-                                    </div> `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
        }
    }
 })
@@ -366,14 +373,15 @@ rock = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                                       <div class = "col-md-2">
-                                         <div class = "card mb-2 shadow-sm">
-                                         <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                         <div class = "d-flex justify-content-between align-items-center">
-                                         <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                         </div> 
-                                        </div> 
-                                    </div> `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
        }
    }
 })
@@ -395,14 +403,15 @@ ice = (result) => {
    if (Array.isArray(result)) {
        for (let valor of result) {
            root.innerHTML += `
-                                       <div class = "col-md-2">
-                                         <div class = "card mb-2 shadow-sm">
-                                         <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                         <div class = "d-flex justify-content-between align-items-center">
-                                         <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                         </div> 
-                                        </div> 
-                                    </div> `
+           <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>`
        }
    }
 })
@@ -423,14 +432,15 @@ document.getElementById("ghost").addEventListener("click", (event) => {
        if (Array.isArray(result)) {
            for (let valor of result) {
                root.innerHTML += `
-                                           <div class = "col-md-2">
-                                             <div class = "card mb-2 shadow-sm">
-                                             <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                             <div class = "d-flex justify-content-between align-items-center">
-                                             <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                             </div> 
-                                            </div> 
-                                        </div> `
+               <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
            }
        }
    })
@@ -451,14 +461,15 @@ document.getElementById("ghost").addEventListener("click", (event) => {
            if (Array.isArray(result)) {
                for (let valor of result) {
                    root.innerHTML += `
-                                               <div class = "col-md-2">
-                                                 <div class = "card mb-2 shadow-sm">
-                                                 <img class = "card-img-top" src = "${valor.img}"alt = "Card  ${valor.name}">
-                                                 <div class = "d-flex justify-content-between align-items-center">
-                                                 <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-                                                 </div> 
-                                                </div> 
-                                            </div> `
+                   <div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div> `
                }
            }
        })
@@ -488,14 +499,15 @@ if (Array.isArray(resultOrden)) {
 for (let valor of resultOrden) {
 console.log(valor.name)
 root.innerHTML += `
-  <div class = "col-md-2">
-  <div class = "card mb-2 shadow-sm">
-  <img class = "card-img-top" src = "${valor.img}"alt = "Card ${valor.name}">
-  <div class = "d-flex justify-content-between align-items-center">
-  <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-  </div> 
- </div> 
-</div> `
+<div class = "card"
+       style = "width: 10rem;" >
+           <div class = "card-body" >
+           <h5 class = "card-title" > ${valor.name} </h5> 
+           <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+           <p class = "card-text" > <img class = "card-img"
+       src = "${valor.img}"
+       alt = "Card ${valor.img}"> </p> 
+       </div> </div>`
 
 }
 }
@@ -524,17 +536,102 @@ root.innerHTML = "";
 if (Array.isArray(resultOrden)) {
  for (let valor of resultOrden) {
    console.log(valor.name)
-   root.innerHTML += `
-      <div class = "col-md-2">
-      <div class = "card mb-2 shadow-sm">
-      <img class = "card-img-top" src = "${valor.img}"alt = "Card ${valor.name}">
-      <div class = "d-flex justify-content-between align-items-center">
-      <button type = "button" class = "btn btn-sm btn-outline-dark w-100"> ${valor.name} </button> 
-      </div> 
-     </div> 
- </div> `
+   root.innerHTML += `<div class = "card"
+   style = "width: 10rem;" >
+       <div class = "card-body" >
+       <h5 class = "card-title" > ${valor.name} </h5> 
+       <h6 class = "card-subtitle mb-2 text-muted" > N°${valor.num} </h6> 
+       <p class = "card-text" > <img class = "card-img"
+   src = "${valor.img}"
+   alt = "Card ${valor.name}"> </p> 
+   </div> </div> `
 
  }
 }
 }
-)
+) 
+
+//Modales
+
+const modalPage= document.querySelector('#modal')
+fetch("data/pokemon/pokemon.json")
+.then (data=> data.json())
+.then(data => {
+        
+    modal (data.pokemon)
+    
+})
+
+const perfilPage = document.getElementsByClassName("card-img");
+function modal(data) {
+    for (let i = 0; i < perfilPage.length; i++) {
+        perfilPage[i].addEventListener("click", () => {
+            document.getElementById("modal").innerHTML = ""; 
+            document.getElementById("modal").style.display="block"
+            document.getElementById("modal").innerHTML += `
+            <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         <h4 class="modal-title"> ${data[i].name}</h4>
+        </div>
+        <div class="modal-body">
+
+        <div class="container">
+        <div class="row">
+          <div class="col ">
+          <img class = "card-img"
+          src = "${data[i].img}"
+          alt = "Card ${data[i].name}"
+          style = "width: 20rem;>
+          </div>
+          <div class="col">
+          <div class="card">
+          <h5 class="card-header">Evoluciones</h5>
+          <div class="card-body">
+            <p class="card-text">${data[i].next_evolution[name]}</p>
+          </div>
+        </div>
+          </div>
+        </div>
+       
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Debilidades</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Talla</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">${data[i].num}</th>
+            <td>${data[i].type}</td>
+            <td>${data[i].weaknesses}</td>
+            <td>${data[i].weight}</td>
+            <td>${data[i].height}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+            `;
+               $("#myModal").modal();
+             
+        })
+   
+}}
