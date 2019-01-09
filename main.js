@@ -18,12 +18,21 @@ function principalPage(data){
 
  // FIltrado
     const root = document.querySelector("#root");
+    const compute = document.querySelector(".average");
+
      document.getElementById("grass").addEventListener("click", (event) => {
          event.preventDefault();
         
          grassFilter(window.pokemones.pokeFilter(totalData.pokemon,"Grass"));
+         grassPercentage(window.pokemones.computePokemon(totalData.pokemon,"Grass"))
         
      })
+     document.getElementById("grass-mobile").addEventListener("click", (event) => {
+        event.preventDefault();
+       
+        grassFilter(window.pokemones.pokeFilter(totalData.pokemon,"Grass"));
+        grassPercentage(window.pokemones.computePokemon(totalData.pokemon,"Grass"))
+    })
      function grassFilter(result){
              root.innerHTML = "";
              if (Array.isArray(result)) {
@@ -39,13 +48,23 @@ function principalPage(data){
              alt = "Card ${i.name}"> </p> 
              </div> </div>
               `;  modal(window.pokemones.pokeFilter(totalData.pokemon,"Grass"))
-         }
-        }}
+         } 
+        }} 
+    function grassPercentage(){
+        compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Grass")}% </strong> de los Pokemones de la región de Kanto son de Planta. </span>`
+    }
+
         document.getElementById("poison").addEventListener("click", (event) => {
             event.preventDefault();
             poisonFilter(window.pokemones.pokeFilter(totalData.pokemon,"Poison"));
-           
+            poisonPercentage(window.pokemones.computePokemon(totalData.pokemon,"Poison"))
         })
+        document.getElementById("poison-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            poisonFilter(window.pokemones.pokeFilter(totalData.pokemon,"Poison"))
+            poisonPercentage(window.pokemones.computePokemon(totalData.pokemon,"Poison"))
+        })
+        
         function poisonFilter(result){
                 root.innerHTML = "";
                 if (Array.isArray(result)) {
@@ -62,10 +81,19 @@ function principalPage(data){
                 </div> </div>
                  `;  modal(window.pokemones.pokeFilter(totalData.pokemon,"Poison"))
             }}}
+        function poisonPercentage(){
+               compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Poison")}% </strong> de los Pokemones de la región de Kanto son Venenoso.</span>`
+            }
         document.getElementById("fire").addEventListener("click", (event) => {
             event.preventDefault();
             fireFilter(window.pokemones.pokeFilter(totalData.pokemon,"Fire"));
+            firePercentage(window.pokemones.computePokemon(totalData.pokemon,"Fire"))
            
+        })
+        document.getElementById("fire-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            fireFilter(window.pokemones.pokeFilter(totalData.pokemon,"Fire"));
+            firePercentage(window.pokemones.computePokemon(totalData.pokemon,"Fire"))
         })
         function fireFilter(result){
                 root.innerHTML = "";
@@ -83,10 +111,18 @@ function principalPage(data){
                 </div> </div>
                  `;  modal(window.pokemones.pokeFilter(totalData.pokemon,"Fire"))
             }}}
+        function firePercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Fire")}% </strong> de los Pokemones de la región de Kanto son de tipo Fuego.</span>`
+             }
         document.getElementById("flying").addEventListener("click", (event) => {
             event.preventDefault();
             flyingFilter(window.pokemones.pokeFilter(totalData.pokemon,"Flying"));
-            
+            flyingPercentage(window.pokemones.computePokemon(totalData.pokemon,"Flying"))
+        })
+        document.getElementById("flying-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            flyingFilter(window.pokemones.pokeFilter(totalData.pokemon,"Flying"));
+            flyingPercentage(window.pokemones.computePokemon(totalData.pokemon,"Flying"))
         })
         function flyingFilter(result){
                 root.innerHTML = "";
@@ -104,10 +140,18 @@ function principalPage(data){
                 </div> </div>
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Flying"))
             }}}
+        function flyingPercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Flying")}% </strong> de los Pokemones de la región de Kanto son de tipo Volador.</span>`
+             }
         document.getElementById("water").addEventListener("click", (event) => {
             event.preventDefault();
             waterFilter(window.pokemones.pokeFilter(totalData.pokemon,"Water"));
-   
+            waterPercentage(window.pokemones.computePokemon(totalData.pokemon,"Water"))
+        })
+        document.getElementById("water-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            waterFilter(window.pokemones.pokeFilter(totalData.pokemon,"Water"));
+            waterPercentage(window.pokemones.computePokemon(totalData.pokemon,"Water"))
         })
         function waterFilter(result){
                 root.innerHTML = "";
@@ -124,11 +168,19 @@ function principalPage(data){
                 alt = "Card ${i.name}"> </p> 
                 </div> </div>
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Water"))
-            }}}  
+            }}}
+        function waterPercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Water")}% </strong> de los Pokemones de la región de Kanto son de tipo Agua.</span>`
+             }  
         document.getElementById("bug").addEventListener("click", (event) => {
             event.preventDefault();
             bugFilter(window.pokemones.pokeFilter(totalData.pokemon,"Bug"));
-   
+            bugPercentage(window.pokemones.computePokemon(totalData.pokemon,"Bug"))
+        })
+        document.getElementById("bug-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            bugFilter(window.pokemones.pokeFilter(totalData.pokemon,"Bug"));
+            bugPercentage(window.pokemones.computePokemon(totalData.pokemon,"Bug"))
         })
         function bugFilter(result){
                 root.innerHTML = "";
@@ -146,9 +198,19 @@ function principalPage(data){
                 </div> </div>
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Bug"))
             }}}   
+        function bugPercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Bug")}% </strong> de los Pokemones de la región de Kanto son de tipo Insecto.</span>`
+             }
         document.getElementById("normal").addEventListener("click", (event) => {
             event.preventDefault();
             normalFilter(window.pokemones.pokeFilter(totalData.pokemon,"Normal"));
+            normalPercentage(window.pokemones.computePokemon(totalData.pokemon,"Normal"))
+   
+        })
+        document.getElementById("normal-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            normalFilter(window.pokemones.pokeFilter(totalData.pokemon,"Normal"));
+            normalPercentage(window.pokemones.computePokemon(totalData.pokemon,"Normal"))
    
         })
         function normalFilter(result){
@@ -167,11 +229,19 @@ function principalPage(data){
                 </div> </div>
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Normal"))
             }}} 
+        function normalPercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Normal")}% </strong> de los Pokemones de la región de Kanto son de tipo Normal.</span>`
+             }
        
         document.getElementById("electric").addEventListener("click", (event) => {
             event.preventDefault();
             electricFilter(window.pokemones.pokeFilter(totalData.pokemon,"Electric"));
-   
+            electricPercentage(window.pokemones.computePokemon(totalData.pokemon,"Electric"))
+        })
+        document.getElementById("electric-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            electricFilter(window.pokemones.pokeFilter(totalData.pokemon,"Electric"));
+            electricPercentage(window.pokemones.computePokemon(totalData.pokemon,"Electric"))
         })
         function electricFilter(result){
                 root.innerHTML = "";
@@ -189,7 +259,15 @@ function principalPage(data){
                 </div> </div>
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Electric"))
             }}} 
+        function electricPercentage(){
+                compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Normal")}% </strong> de los Pokemones de la región de Kanto son de tipo Electrico.</span>`
+             }
         document.getElementById("ground").addEventListener("click", (event) => {
+            event.preventDefault();
+            groundFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ground"));
+   
+        })
+        document.getElementById("ground-mobile").addEventListener("click", (event) => {
             event.preventDefault();
             groundFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ground"));
    
@@ -215,6 +293,11 @@ function principalPage(data){
             fightingFilter(window.pokemones.pokeFilter(totalData.pokemon,"Fighting"));
    
         })
+        document.getElementById("fighting-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            fightingFilter(window.pokemones.pokeFilter(totalData.pokemon,"Fighting"));
+   
+        })
         function fightingFilter(result){
                 root.innerHTML = "";
                 if (Array.isArray(result)) {
@@ -232,6 +315,11 @@ function principalPage(data){
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Fighting"))
             }}} 
         document.getElementById("psychic").addEventListener("click", (event) => {
+            event.preventDefault();
+            psychicFilter(window.pokemones.pokeFilter(totalData.pokemon,"Psychic"));
+   
+        })
+        document.getElementById("psychic-mobile").addEventListener("click", (event) => {
             event.preventDefault();
             psychicFilter(window.pokemones.pokeFilter(totalData.pokemon,"Psychic"));
    
@@ -257,6 +345,11 @@ function principalPage(data){
             rockFilter(window.pokemones.pokeFilter(totalData.pokemon,"Rock"));
    
         })
+        document.getElementById("rock-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            rockFilter(window.pokemones.pokeFilter(totalData.pokemon,"Rock"));
+   
+        })
         function rockFilter(result){
                 root.innerHTML = "";
                 if (Array.isArray(result)) {
@@ -274,6 +367,11 @@ function principalPage(data){
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Rock"))
             }}} 
         document.getElementById("ice").addEventListener("click", (event) => {
+            event.preventDefault();
+            iceFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ice"));
+   
+        })
+        document.getElementById("ice-mobile").addEventListener("click", (event) => {
             event.preventDefault();
             iceFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ice"));
    
@@ -300,6 +398,11 @@ function principalPage(data){
             ghostFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ghost"));
    
         })
+        document.getElementById("ghost-mobile").addEventListener("click", (event) => {
+            event.preventDefault();
+            ghostFilter(window.pokemones.pokeFilter(totalData.pokemon,"Ghost"));
+   
+        })
         function ghostFilter(result){
                 root.innerHTML = "";
                 if (Array.isArray(result)) {
@@ -317,6 +420,11 @@ function principalPage(data){
                  `; modal(window.pokemones.pokeFilter(totalData.pokemon,"Ghost"))
             }}} 
         document.getElementById("dragon").addEventListener("click", (event) => {
+            event.preventDefault();
+            dragonFilter(window.pokemones.pokeFilter(totalData.pokemon,"Dragon"));
+   
+        })
+        document.getElementById("dragon-mobile").addEventListener("click", (event) => {
             event.preventDefault();
             dragonFilter(window.pokemones.pokeFilter(totalData.pokemon,"Dragon"));
    
@@ -467,47 +575,6 @@ function modal(data) {
     }
 }
 
-
-/*Estadistica
-
-document.getElementById("grafico").addEventListener("click", (event) => {
-event.preventDefault();
-
-let ctx = document.getElementById("myChart").getContext('2d');
-let myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["Agua", "Fuego", "Electrico","normal"],
-        datasets: [{
-            label: 'Probabilidades de Ganar',
-            data: [12, 19, 3,35],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-})
-*/
  
 function cargando () {
     principalPage()
