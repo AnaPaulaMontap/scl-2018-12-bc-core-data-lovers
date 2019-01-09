@@ -1,10 +1,28 @@
-// Mostrar Pokemones
+// Variables
+let totalData= "";
 const datashow = document.querySelector('#root')
+const root = document.querySelector("#root");
+const perfilPage = document.getElementsByClassName("card-img");
+const compute = document.querySelector(".average");
 
-function principalPage(data) {
+//Data
+window.onload = fetcheame;
+function fetcheame() {
+  fetch("data/pokemon/pokemon.json")
+              .then(data => data.json())
+              .then(data => {
+                
+                totalData=data;
+                cargando();
+                
+       })
+}
+
+// Mostrar Pokemones
+function pageOne(totalData) {
   if (Array.isArray(totalData.pokemon)) {
     for (let i of totalData.pokemon) {
-      root.innerHTML += `
+      datashow.innerHTML += `
                     <div class = "card"
                     style = "width: 10rem;" >
                         <div class = "card-body" >
@@ -20,8 +38,6 @@ function principalPage(data) {
 }
 
 // FIltrado
-const root = document.querySelector("#root");
-const compute = document.querySelector(".average");
 
 document.getElementById("grass").addEventListener("click", (event) => {
   event.preventDefault();
@@ -60,18 +76,16 @@ function grassFilter(result) {
 function grassPercentage() {
   compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Grass")}% </strong> de los Pokemones de la región de Kanto son de Planta. </span>`
 }
-
 document.getElementById("poison").addEventListener("click", (event) => {
   event.preventDefault();
   poisonFilter(window.pokemones.pokeFilter(totalData.pokemon, "Poison"));
-  poisonPercentage(window.pokemones.computePokemon(totalData.pokemon, "Poison"))
+  poisonPercentage(window.pokemones.computePokemon(totalData.pokemon,"Poison"))
 })
 document.getElementById("poison-mobile").addEventListener("click", (event) => {
   event.preventDefault();
   poisonFilter(window.pokemones.pokeFilter(totalData.pokemon, "Poison"))
   poisonPercentage(window.pokemones.computePokemon(totalData.pokemon, "Poison"))
 })
-
 function poisonFilter(result) {
   root.innerHTML = "";
   if (Array.isArray(result)) {
@@ -128,7 +142,7 @@ function fireFilter(result) {
 }
 
 function firePercentage() {
-  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Fire")}% </strong> de los Pokemones de la región de Kanto son de tipo Fuego.</span>`
+  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Fire")}% </strong> de los Pokemones de la región de Kanto son Venenoso.</span>`
 }
 document.getElementById("flying").addEventListener("click", (event) => {
   event.preventDefault();
@@ -553,16 +567,14 @@ function dragonPercentage() {
 }
 
 // Ordenado
-
-const rootAZ = document.querySelector("#root");
-
 document.getElementById("orderA").addEventListener("click", (event) => {
   event.preventDefault();
-  azOrder(window.pokemones.orderAZ(totalData.pokemon))
+  azOrder(window.pokemones.orderAZ(totalData.pokemon, "name", "az"))
 
 })
 
 function azOrder(resultOrden) {
+  compute.innerHTML="";
   root.innerHTML = "";
   if (Array.isArray(resultOrden)) {
     for (let i of resultOrden) {
@@ -583,11 +595,12 @@ function azOrder(resultOrden) {
 }
 document.getElementById("orderZ").addEventListener("click", (event) => {
   event.preventDefault();
-  zaOrder(window.pokemones.orderZA(totalData.pokemon))
+  zaOrder(window.pokemones.orderZA(totalData.pokemon, "name", "za"))
 
 })
 
 function zaOrder(resultOrden) {
+  compute.innerHTML="";
   root.innerHTML = "";
   if (Array.isArray(resultOrden)) {
     for (let i of resultOrden) {
@@ -608,9 +621,6 @@ function zaOrder(resultOrden) {
 }
 
 //  Modal
-
-const perfilPage = document.getElementsByClassName("card-img");
-
 function modal(data) {
   for (let i = 0; i < perfilPage.length; i++) {
     perfilPage[i].addEventListener("click", () => {
@@ -683,16 +693,16 @@ function modal(data) {
                       
                     </div>
                   </div>
-                  </div>`;
-      $("#myModal").modal();
+                  </div>`; window.$("#myModal").modal();
     })
   }
 }
 
 
 function cargando() {
-  principalPage()
-  console.log("Todos los recursos terminaron de cargar!")
+  
+  pageOne(totalData)
 }
 
-window.onload = cargando;
+
+

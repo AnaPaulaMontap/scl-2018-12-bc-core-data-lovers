@@ -1,46 +1,41 @@
-let totalData= "";
-
-fetch("data/pokemon/pokemon.json")
-            .then(data => data.json())
-            .then(data => {
-              
-              totalData=data
-     }),
-
-window.totalData= totalData
-
 window.pokemones = {
-
+  
   pokeFilter: (data, condition) => {
-
-    const result = data.filter(element => {
+    const pokeData= data
+    const result = pokeData.filter(element => {
       return element.type.indexOf(condition) !== -1;
     })
     return result
   },
 
 
-  orderAZ: (data) => {
-    const resultOrden = data.sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      } if (a.name < b.name) {
-        return -1;
-      } return 0;
-    });
-    return resultOrden
-  },
+  orderAZ: (data, sortBy, sortOrder) => {
+      const dataPoke = data
+      if (sortBy === "name" && sortOrder === "az") {
+        const resultOrden=dataPoke.sort((a, b) => {
+            if (a.name > b.name) {
+              return 1;
+            } if (a.name < b.name) {
+              return -1;
+            }
+          });
+          return resultOrden
+        }
+      },
 
-  orderZA: (data) => {
-    const resultOrden = data.sort((a, b) => {
-      if (a.name < b.name) {
-        return 1;
-      } if (a.name > b.name) {
-        return -1;
-      } return 0;
-    });
-    return resultOrden
-  },
+      orderZA: (data, sortBy, sortOrder) => {
+        const dataPoke2 = data
+        if (sortBy === "name" && sortOrder === "za") {
+          const resultOrden=dataPoke2.sort((a, b) => {
+              if (a.name < b.name) {
+                return 1;
+              } if (a.name > b.name) {
+                return -1;
+              } 
+            });
+            return resultOrden
+          }
+        },
 
 
   computePokemon: (data, condition) => {
