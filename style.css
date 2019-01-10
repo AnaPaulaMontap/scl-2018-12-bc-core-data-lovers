@@ -12,122 +12,185 @@ body{
      background: #c3f294;
      color:  #225802 ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  
  .Poison{
-     border: solid 1px  #5f4f6c ;
-     background: #adb0d3;
-     color:  #5f4f6c;
+     border: solid 1px  #493c53 ;
+     background: #adb0d3c9;
+     color:  #493c53;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Fire{
      border: solid 1px  #760013 ;
      background: #e66759;
      color:  #760013 ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Flying{
      border: solid 1px  #0d257c ;
-     background: #4c70ac ;
+     background: #4c6fac98 ;
      color:  #0d257c  ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Water{
      border: solid 1px  #029da1 ;
      background: #d4e5e3;
      color:  #029da1 ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
+
  }
  .Bug{
      border: solid 1px  #5c8a03;
      background: #d6f58e;
      color:  #5c8a03 ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
+     
  }
  .Normal{
      border: solid 1px  #3a2d2d;
      background: #cbc7d3;
      color:  #3a2d2d;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Electric{
      border: solid 1px  #c99f13 ;
      background: #fdf06d;
      color:  #c99f13;
      font-weight: bold;
-     padding: 1%;
-     margin:1%;
+     padding: 4px;
+     border-radius: 8px;
+     display: inline-block;
+     
  }
  .Ground{
      border: solid 1px  #6a2b00;
      background:  #d7a350 ;
      color: #6a2b00;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;    
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Fighting{
      border: solid 1px  #181317;
      background: #828280;
      color:  #181317;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Psychic{
      border: solid 1px #291a2d;
      background: #bfb6a4;
      color:  #291a2d;
      font-weight: bold;
-     padding: 1%;
      margin:1%;
+     padding: 4px;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Rock{
      border: solid 1px  #625449;
      background: #ad8c7b;
      color:  #625449;
      font-weight: bold;
-     padding: 1%;
      margin:1%;
+     padding: 4px;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Ice{
-     border: solid 1px  #6fa6c4;
-     background: #c4e5ee;
-     color:  #6fa6c4 ;
+     border: solid 1px  #224c63;
+     background: #c4e5eeb9;
+     color:  #224c63 ;
      font-weight: bold;
-     padding: 1%;
      margin:1%;
+     padding: 4px;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Ghost{
      border: solid 1px  #705e6c;
      background: #c4a8a5 ;
      color:  #705e6c ;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
  .Dragon{
      border: solid 1px #95242a;
      background: #e8c4c4;
      color:  #95242a;
      font-weight: bold;
-     padding: 1%;
+     padding: 4px;
      margin:1%;
+     border-radius: 8px;
+     display: inline-block;
  }
+ .Fairy{
+    border: solid 1px #d34a78;
+    background: #ffd5db;
+    color:  #d34a78;
+    font-weight: bold;
+    padding: 4px;
+    margin:1%;
+    border-radius: 8px;
+    display: inline-block;
+}
+.Dark{
+    border: solid 1px #171317 ;
+    background: #a9adc1;
+    color:  #171317 ;
+    font-weight: bold;
+    padding: 4px;
+    margin:1%;
+    border-radius: 8px;
+    display: inline-block;
+}
+ 
+.Steel{
+    border: solid 1px #406c35 ;
+    background: #a4af97;
+    color:  #406c35 ;
+    font-weight: bold;
+    padding: 4px;
+    margin:1%;
+    border-radius: 8px;
+    display: inline-block;
+}
  .undefined{
      display: none !important;
  }
@@ -148,7 +211,7 @@ body{
  }
  
  .title-categories{
-     padding: 2%;
+     padding: 4px;
      border-radius: 15px;
      background: #1D8696;
      
@@ -159,6 +222,10 @@ body{
      color: #1D8696;
      margin: 1%;
  
+ }
+
+ .card-card:hover{
+     transform: scale(1.1);
  }
  .navbar{
      background: #1D8696;
@@ -175,4 +242,19 @@ body{
  }
  .percentage{
     color: teal;
+    
 } 
+
+.table {
+    border: 2px solid teal;
+    color: teal;
+}
+
+
+
+@media (min-width: 300px) and (max-width:800px){
+    .table {
+        font-size: 13px;
+    }
+}
+

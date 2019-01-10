@@ -23,7 +23,7 @@ function pageOne(totalData) {
   if (Array.isArray(totalData.pokemon)) {
     for (let i of totalData.pokemon) {
       datashow.innerHTML += `
-                    <div class = "card"
+                    <div class = "card card-card"
                     style = "width: 10rem;" >
                         <div class = "card-body" >
                         <h5 class = "card-title" > ${i.name} </h5> 
@@ -58,7 +58,7 @@ function grassFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-             <div class = "card"
+             <div class = "card card-card"
              style = "width: 10rem;" >
                  <div class = "card-body" >
                  <h5 class = "card-title" > ${i.name} </h5> 
@@ -91,7 +91,7 @@ function poisonFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -126,7 +126,7 @@ function fireFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -142,8 +142,9 @@ function fireFilter(result) {
 }
 
 function firePercentage() {
-  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Fire")}% </strong> de los Pokemones de la región de Kanto son Venenoso.</span>`
+  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Fire")}% </strong> de los Pokemones de la región de Kanto son de Fuego.</span>`
 }
+
 document.getElementById("flying").addEventListener("click", (event) => {
   event.preventDefault();
   flyingFilter(window.pokemones.pokeFilter(totalData.pokemon, "Flying"));
@@ -160,7 +161,7 @@ function flyingFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -174,10 +175,10 @@ function flyingFilter(result) {
     }
   }
 }
-
 function flyingPercentage() {
   compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Flying")}% </strong> de los Pokemones de la región de Kanto son de tipo Volador.</span>`
 }
+
 document.getElementById("water").addEventListener("click", (event) => {
   event.preventDefault();
   waterFilter(window.pokemones.pokeFilter(totalData.pokemon, "Water"));
@@ -194,7 +195,7 @@ function waterFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -228,7 +229,7 @@ function bugFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -264,7 +265,7 @@ function normalFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -299,7 +300,7 @@ function electricFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -333,7 +334,7 @@ function groundFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -367,7 +368,7 @@ function fightingFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -403,7 +404,7 @@ function psychicFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -439,7 +440,7 @@ function rockFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -475,7 +476,7 @@ function iceFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -512,7 +513,7 @@ function ghostFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = " card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -528,7 +529,7 @@ function ghostFilter(result) {
 }
 
 function ghostPercentage() {
-  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Ghost")}% </strong> de los Pokemones de la región de Kanto son de tipo Hielo.</span>`
+  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Ghost")}% </strong> de los Pokemones de la región de Kanto son de tipo Fantasma.</span>`
 }
 document.getElementById("dragon").addEventListener("click", (event) => {
   event.preventDefault();
@@ -547,7 +548,7 @@ function dragonFilter(result) {
   if (Array.isArray(result)) {
     for (let i of result) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = " card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -563,7 +564,7 @@ function dragonFilter(result) {
 }
 
 function dragonPercentage() {
-  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Dragón")}% </strong> de los Pokemones de la región de Kanto son de tipo Hielo.</span>`
+  compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Dragon")}% </strong> de los Pokemones de la región de Kanto son de tipo Dragón.</span>`
 }
 
 // Ordenado
@@ -579,7 +580,7 @@ function azOrder(resultOrden) {
   if (Array.isArray(resultOrden)) {
     for (let i of resultOrden) {
       root.innerHTML += `
-             <div class = "card"
+             <div class = "card card-card"
              style = "width: 10rem;" >
                  <div class = "card-body" >
                  <h5 class = "card-title" > ${i.name} </h5> 
@@ -605,7 +606,7 @@ function zaOrder(resultOrden) {
   if (Array.isArray(resultOrden)) {
     for (let i of resultOrden) {
       root.innerHTML += `
-                <div class = "card"
+                <div class = "card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -645,30 +646,30 @@ function modal(data) {
 
                         <div class="col-12 col-md-8">
                         <div class="card" style="width: 18rem;">
-                         <p class="list-group-item">N° : #${data[i].num} </p>
-                         <p class="list-group-item">Candy: ${data[i].candy} </p>
+                         <p class="list-group-item"><strong>N° : </strong>#${data[i].num} </p>
+                         <p class="list-group-item"><strong>Candy: </strong>${data[i].candy} </p>
 
-                         <p class="list-group-item"> Tipo : <br>
+                         <p class="list-group-item"> <strong>Tipo : </strong><br>
                           <span class = "${data[i].type[0]}">${data[i].type[0]}</span>
                           <span class = "${data[i].type[1]}">${data[i].type[1]}</span> </p>
-                         <p class="list-group-item">Debilidades: <br>
+                         <p class="list-group-item"><strong>Debilidades: </strong> <br>
                           <span class = "${data[i].weaknesses[0]}">  ${data[i].weaknesses[0]} </span>
                           <span class = "${data[i].weaknesses[1]}">  ${data[i].weaknesses[1]} </span> 
-                          <span class = "${data[i].weaknesses[2]}">  ${data[i].weaknesses[2]} </span>
+                          <span class = "${data[i].weaknesses[2]}">  ${data[i].weaknesses[2]} </span> 
                           <span class = "${data[i].weaknesses[3]}">  ${data[i].weaknesses[3]} </span> 
                           <span class = "${data[i].weaknesses[4]}">  ${data[i].weaknesses[4]} </span> 
                           <span class = "${data[i].weaknesses[5]}">  ${data[i].weaknesses[5]} </span> 
                          </p>
                         </div> </div></div>
                         <br>
-                        <table class="table table-bordered">
-                        <thead class="thead-light gray">
+                        <table class="table">
+                        <thead class="table">
                         <tr>
-                        <th scope="col">Peso </th>
-                        <th scope="col">Talla</th>
-                        <th scope="col">Spawn Chance</th>
-                        <th scope="col">Spawn Time</th>
-                        <th scope="col">Egg</th>
+                        <th class" table table-head text-center" scope="col">Peso </th>
+                        <th class"table table-head text-center" scope="col">Talla</th>
+                        <th class"table table-head text-center" scope="col">Spawn <br> Chance</th>
+                        <th class"table table-head text-center" scope="col">Spawn <br> Time</th>
+                        <th class"table table-head text-center" scope="col">Egg</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -687,7 +688,7 @@ function modal(data) {
                          
                          
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default">Ver Estadistica</button>
+                          <button type="button" class="btn btn-default"></button>
                         </div>
                       </div>
                       
@@ -702,6 +703,7 @@ function modal(data) {
 function cargando() {
   
   pageOne(totalData)
+  
 }
 
 
