@@ -9,7 +9,7 @@ PokeInfo es una aplicación que brinda ayuda a personas que están comenzando a 
 
 * También está la opción para ordenar los nombres de los pokémones alfabéticamenta.
 
-## Historias de usuarios
+## Historias de usuarios 
 ***
 
 Preguntas: 
