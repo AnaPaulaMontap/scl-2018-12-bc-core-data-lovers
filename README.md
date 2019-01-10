@@ -99,7 +99,10 @@ En la tercera pagina muestra el perfil del pokémon y me en seña que tipo de po
 
 En la cuarta pagina muestra la evolución del pokeḿon y la cantidad de caramelos que se necesita para evolucionar a el pokémon y da la opción de "Volver al inicio" y así regresar a la primera pagina.
 
+## Planificación 
 
+El primer paso para la creación del diseño web fue la planificación, pensando siempre desde el ambito del usuario. 
+Puedes revisar la planificación [aquí](https://trello.com/b/NdIkcVB3/pokemon-go)
 
 
 
