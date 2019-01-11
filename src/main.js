@@ -590,7 +590,7 @@ function azOrder(resultOrden) {
              alt = "Card ${i.name}"> </p> 
              </div> </div>
               `;
-      modal(window.pokemones.orderAZ(totalData.pokemon))
+      modal(window.pokemones.orderAZ(totalData.pokemon, "name", "az"))
     }
   }
 }
@@ -606,7 +606,7 @@ function zaOrder(resultOrden) {
   if (Array.isArray(resultOrden)) {
     for (let i of resultOrden) {
       root.innerHTML += `
-                <div class = "card-card"
+                <div class = "card card-card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
                     <h5 class = "card-title" > ${i.name} </h5> 
@@ -616,7 +616,7 @@ function zaOrder(resultOrden) {
                 alt = "Card ${i.name}"> </p> 
                 </div> </div>
                  `;
-      modal(window.pokemones.orderZA(totalData.pokemon))
+      modal(window.pokemones.orderZA(totalData.pokemon, "name", "za"))
     }
   }
 }
@@ -653,14 +653,14 @@ function modal(data) {
                          <p class="list-group-item"><strong>Candy: </strong>${data[i].candy} </p>
 
                          <p class="list-group-item"> <strong>Tipo : </strong><br>
-                          <span class = "${data[i].type[0]}">${data[i].type[0]}</span>
+                          <span class = "${data[i].type[0]}">${data[i].type[0]},</span>
                           <span class = "${data[i].type[1]}">${data[i].type[1]}</span> </p>
                          <p class="list-group-item"><strong>Debilidades: </strong> <br>
-                          <span class = "${data[i].weaknesses[0]}">  ${data[i].weaknesses[0]} </span>
-                          <span class = "${data[i].weaknesses[1]}">  ${data[i].weaknesses[1]} </span> 
-                          <span class = "${data[i].weaknesses[2]}">  ${data[i].weaknesses[2]} </span> 
-                          <span class = "${data[i].weaknesses[3]}">  ${data[i].weaknesses[3]} </span> 
-                          <span class = "${data[i].weaknesses[4]}">  ${data[i].weaknesses[4]} </span> 
+                          <span class = "${data[i].weaknesses[0]}">  ${data[i].weaknesses[0]},</span>
+                          <span class = "${data[i].weaknesses[1]}">  ${data[i].weaknesses[1]},</span> 
+                          <span class = "${data[i].weaknesses[2]}">  ${data[i].weaknesses[2]},</span> 
+                          <span class = "${data[i].weaknesses[3]}">  ${data[i].weaknesses[3]},</span> 
+                          <span class = "${data[i].weaknesses[4]}">  ${data[i].weaknesses[4]},</span> 
                           <span class = "${data[i].weaknesses[5]}">  ${data[i].weaknesses[5]} </span> 
                          </p>
                         </div> </div></div>
@@ -670,9 +670,9 @@ function modal(data) {
                         <tr>
                         <th class" table table-head text-center" scope="col">Peso </th>
                         <th class"table table-head text-center" scope="col">Talla</th>
-                        <th class"table table-head text-center" scope="col">Spawn <br> Chance</th>
-                        <th class"table table-head text-center" scope="col">Spawn <br> Time</th>
-                        <th class"table table-head text-center" scope="col">Egg</th>
+                        <th class"table table-head text-center" scope="col"> Spawn <br> Chance</th>
+                        <th class"table table-head text-center" scope="col">Tiempo <br> Aparición</th>
+                        <th class"table table-head text-center" scope="col">Km por Huevo</th>
                         </tr>
                         </thead>
                         <tbody>

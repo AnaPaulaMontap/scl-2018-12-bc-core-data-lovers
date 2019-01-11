@@ -1,18 +1,23 @@
-# Pokémon GO
-![cipherChristmas](imagenes/241232_1_5bec8f2e39ae2.jpg)
+# PokéGoInfo
 
-PokeInfo es una aplicación que brinda ayuda a personas que están comenzando a jugar PokémonGO y visualizar la información sobre los pokémones como el perfil y las evoluciones.
+![celular](imagenes/241232_1_5bec8f2e39ae2.jpg)
 
-* El usuario puede seleccionar la categoría que desee y así poder revisar los pokémones de la categoría que haya seleccionado.
+PokeGoInfo es una aplicación que brinda ayuda a personas que están comenzando a jugar PokémonGO y visualizar la información sobre los pokémones como el perfil y las evoluciones.
 
-* En el momento que el usuario seleccione un pokemon le aparecerá la información de este pokémon, también ver las evoluciones y ver la cantidad de caramelos que debe juntar para poder evolucionar a su pokemon.
+* El usuario puede seleccionar la categoría que desee y así poder revisar los pokémones de la categoría seleccionada.
 
-* También está la opción para ordenar los nombres de los pokémones alfabéticamenta.
+* En el momento que el usuario seleccione un pokemon le aparecerá la información caracteristica de este pokémon.
+
+* También si es más facil para el usuario está la opción para ordenar los nombres de los pokémones alfabéticamenta.
 
 ## Historias de usuarios 
+
 ***
 
-Preguntas: 
+Una vez definido nuentro tema a eleccion, buscamos usuarios de la aplicación Pokemon Go para que nos cuenten que es lo que ellos buscarían o nos recomendarían informar a los jugadores que recién se integran al mundo Pokemon.
+
+La preguntas fueron: 
+
 1.-¿Que datos son los mas importantes como en los pokémones? ( habilidades, ataque, etc.) 
 
 2.-¿Cuales crees tu que son los objetivos o propósitos del juego?
@@ -68,8 +73,9 @@ Ha medida que vayas subiendo nivel a tu entrenador, saldrán pokemones más fuer
 Para que así no uses polvos estelares en mejorar pokémones de nivel bajo y usarlos para mejorar pokémones de nivel 35 hacia delante, lo digo por que los polvos estelares es el elemento más escaso para mejorar pokémones. Las personas que lo usan en niveles bajos, se quedan despues sin polvos estelares para mejorar sus pokémones fuertes.
 
 ## Flujo
+***
 
-Una vez ya teniendo claro el usuario a quien estará dirigida la aplicación, desarrollamos el flujo del recorrido que hará el usuario:
+Una vez ya teniendo claro el usuario a quien estará dirigida la aplicación y lo que se desea mostrar en nuestra interfaz, desarrollamos el flujo de baja fidelidad que hará el usuario mientras navegue por la página.
 
 * Se entra a la pagina.
 * Encuentra las categorías y se muestra una galeria de los pokémones.
@@ -81,32 +87,71 @@ Una vez ya teniendo claro el usuario a quien estará dirigida la aplicación, de
 ![cipherChristmas](imagenes/20190103_210443.jpg)
 
 ## Diseño interfaz de usuario
+***
 
-Luego de hacer nuestras historias de usuario, diseñamos nuestro prototipo en Figma:
+Posterior a testear con nuestras compañeras el uso y vision de la página, comenzamos a hacer un prototipo de alta fidelidad para planificar como queríamos que fuese mostrada nuestra app.
+
+
+**Primera Pantalla**
 
 ![cipherChristmas](imagenes/cap1.png)
-En la primera pagina se encuentra los de pokemon go y de los diferentes equipos, también una pequeña descripción, un filtro para ordenar alfabéticamente, las categorías y una pequeña muestra de los tipos de pokémones y al seleccionar una categoría los enviara a la segunda pagina.
+
+En la primera página se encuentra el logo de nuestra app, también una pequeña descripción de nuestro objetivo, el filtro que permite monstrar a los pokemones por categorías y 
+una sección de orden para alinear los pokemones alfabeticamente. 
+
+Al seleccionar algunas de estas opciones se ingresa a la segunda pantalla.
+
+**Segunda Pantalla**
 
 ![cipherChristmas](imagenes/cap2.png)
 
-La segunda pagina muestra los pokémones de la categoría seleccionada, en este caso es la categoría tipo planta y hay puedo seleccionar al pokémon que deseo ver el perfil.
+La segunda pagina muestra los pokémones con la seccion aplicada, en este caso esta filtrada por la categoría planta la categoría tipo planta y hay se puede seleccionar al pokémon que se desea recibir información.
 
 ![cipherChristmas](imagenes/cap3.png)
 
-En la tercera pagina muestra el perfil del pokémon y me en seña que tipo de pokémon es, la habilidad, la habilidad oculta, la velocidad y tiene la opción de ver la evolución.
+**Terdera Pantalla**
+
+En la tercera pagina se muestra el perfil del pokémon y se muestra la información basica como peso, estatura, kms para huevos entre otros.
+
+
+**Cuarta Pantalla**
 
 ![cipherChristmas](imagenes/cap4.png)
 
 En la cuarta pagina muestra la evolución del pokeḿon y la cantidad de caramelos que se necesita para evolucionar a el pokémon y da la opción de "Volver al inicio" y así regresar a la primera pagina.
 
-## Planificación 
 
-El primer paso para la creación del diseño web fue la planificación, pensando siempre desde el ambito del usuario. 
+
+## Planificación 
+***
+Una de las cosas mas importantes a la hora de desarrollar y la creación del diseño web fue la planificación, pensando siempre desde las acciones que realice el usuario miestran navegue. 
+
+
 Puedes revisar la planificación [aquí](https://trello.com/b/NdIkcVB3/pokemon-go)
 
 
+## Testeo de Usabilidad
+***
+
+Una vez realizado los prototipos se realizaron test a nuestro usuario promedio ( personas que les interese comenzar a jugar Pokemon GO pero no esten muy inmersas en el tema ) para recibir el feedback y hacer los cambios necesarios para optimizar la navegación .
+
+Los problemas más comunes que encontramos una vez testeada la página fueron : 
+
+- La información de perfil de los pokemones debe estar en Español
+- Las etiquetas de tipo o debilidad de pokemon se da a entender que son tipo boton y llevan a otra pantalla
+-La información de debilidades podría hacer una comparación de otros pokemones y sus puntajes
+- Guardar los pokemones capturados, para crear un tipo de "Pokedex" para poder preparlas par aun posible combate. 
+
+Si bien las soluciones a estas propuestas son más de tipo de contenido y fueron consideraciones para una próxima version y se realizaron los cambios de tipo visuales quedando la página de esta manera. 
 
 
+![pantallaPrincipal](imagenes/pantallainicio.png)
+
+**Decisiones de diseño**
+
+Para el diseño final de nuestra interfaz siempre fueron considerados los colores principal de la aplicación PokemonGo y se creo además un logo representativo. 
+
+![logo](imagenes/cambiada.png)
 
 
 
