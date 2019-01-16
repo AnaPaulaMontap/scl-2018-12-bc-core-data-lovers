@@ -6,126 +6,56 @@ body{
      background:  linear-gradient(119.36deg, #52B888 0%, #266378 100%);
      
  }
- .Grass{
-     border: solid 1px  #225802 ;
-     background: #c3f294;
-     color:  #225802 ;
+ .Grass,.Poison,.Fire,.Flying, .Water,.Bug,.Normal,.Electric,.Ground,.Fighting,.Psychic,.Rock,.Ice,.Ghost,.Dragon {
      font-weight: bold;
      padding: 1%;
      margin:1%;
  }
  
+ .Grass{
+    color:  #225802 ;
+ }
  .Poison{
-     border: solid 1px  #5f4f6c ;
-     background: #adb0d3;
-     color:  #5f4f6c;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
+    color:  #5f4f6c; 
  }
  .Fire{
-     border: solid 1px  #760013 ;
-     background: #e66759;
-     color:  #760013 ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
+    color:  #760013 ;    
  }
- .Flying{
-     border: solid 1px  #0d257c ;
-     background: #4c70ac ;
-     color:  #0d257c  ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
+ .Flying{    
+     color:  #0d257c  ;    
  }
- .Water{
-     border: solid 1px  #029da1 ;
-     background: #d4e5e3;
-     color:  #029da1 ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
+.Water{
+     color:  #029da1 ;     
  }
  .Bug{
-     border: solid 1px  #5c8a03;
-     background: #d6f58e;
-     color:  #5c8a03 ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
+     color:  #5c8a03 ;     
  }
  .Normal{
-     border: solid 1px  #3a2d2d;
-     background: #cbc7d3;
      color:  #3a2d2d;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Electric{
-     border: solid 1px  #c99f13 ;
-     background: #fdf06d;
      color:  #c99f13;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Ground{
-     border: solid 1px  #6a2b00;
-     background:  #d7a350 ;
      color: #6a2b00;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Fighting{
-     border: solid 1px  #181317;
-     background: #828280;
      color:  #181317;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Psychic{
-     border: solid 1px #291a2d;
-     background: #bfb6a4;
      color:  #291a2d;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Rock{
-     border: solid 1px  #625449;
-     background: #ad8c7b;
      color:  #625449;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Ice{
-     border: solid 1px  #6fa6c4;
-     background: #c4e5ee;
      color:  #6fa6c4 ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Ghost{
-     border: solid 1px  #705e6c;
-     background: #c4a8a5 ;
      color:  #705e6c ;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .Dragon{
-     border: solid 1px #95242a;
-     background: #e8c4c4;
      color:  #95242a;
-     font-weight: bold;
-     padding: 1%;
-     margin:1%;
  }
  .undefined{
      display: none !important;
@@ -141,17 +71,14 @@ body{
     background-size: cover;
     border-radius: 15px;
     margin-top: 1%;
-    opacity: 0.9;
- 
-   
+    opacity: 0.9; 
  }
  
  .title-categories{
      padding: 2%;
      border-radius: 15px;
      background: #1D8696;
-     
- }
+  }
  
  .card{
      border: solid 2px #1D8696;
@@ -169,14 +96,15 @@ body{
      color: teal;
      font-weight: bold;
      -webkit-text-stroke: 0.5px #1D8696;
- 
-     
  }
+
  .percentage{
      color: teal;
  }
+
  #root{
      margin-left:2%;
+     
  }
  .select-type{
      width:70%;
@@ -189,4 +117,9 @@ body{
  }
  .form-inline{
      width: 35%;
+ }
+ #myChart, #myChart1{
+    width: 80% !important;
+    height: 50%;
+    margin: auto 10%;
  }
