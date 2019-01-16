@@ -176,7 +176,7 @@ function modal(data) {
 
 //  Botón Buscar 
 
-document.getElementById("searching").addEventListener("click", (event) => {
+document.getElementById("searching").addEventListener("click", () => {
   let conditionSearch = document.getElementById("search-imput").value
   principalPage(window.pokemones.pokeSearch(totalData.pokemon, conditionSearch))
 })
@@ -196,9 +196,9 @@ document.getElementById("statistics").addEventListener("click", (event) => {
 
 })
 
-function graficPercentage(data) {
+function graficPercentage() {
   var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
+   new window.Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
 
@@ -248,9 +248,9 @@ function graficPercentage(data) {
 }
 
 
-function graficWeaknesses(data) {
+function graficWeaknesses() {
   var ctx = document.getElementById('myChart1').getContext('2d');
-  var chart = new Chart(ctx, {
+  new window.Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
 
@@ -304,5 +304,4 @@ function graficWeaknesses(data) {
 
 function cargando() {
   principalPage(totalData.pokemon)
-  console.log("Todos los recursos terminaron de cargar!")
 }
