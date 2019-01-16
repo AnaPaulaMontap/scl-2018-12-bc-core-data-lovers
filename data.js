@@ -59,7 +59,17 @@ window.pokemones = {
     return result
   },
 
+  pokemonWeaknesses: (data, condition) => {
+    let totalCondition = 0;
+    data.forEach(element => {
 
+      if (element.weaknesses.indexOf(condition) !== -1) {
+        totalCondition++
+      }
+
+    })
+    return totalCondition
+  },
 
 
 
