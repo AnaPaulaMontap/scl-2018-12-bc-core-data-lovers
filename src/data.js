@@ -48,7 +48,21 @@ window.pokemones = {
 
     })
     return Math.round(totalCondition * 100 / 151)
-  }
+  },
+
+  pokeSearch: (data, condition) => {
+    const dataSerch= data
+    const result = dataSerch.filter(element => {
+      return element.name.toLowerCase().indexOf(condition.toLowerCase()) !== -1
+      
+    })
+    return result
+  },
+
+
+
+
+
 
 
 }
