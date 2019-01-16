@@ -1,5 +1,5 @@
 // Variables
-let totalData= "";
+let totalData = "";
 const root = document.querySelector("#root");
 const perfilPage = document.getElementsByClassName("card-img");
 
@@ -9,20 +9,21 @@ window.onload = fetcheame;
 
 function fetcheame() {
   fetch("data/pokemon/pokemon.json")
-              .then(data => data.json())
-              .then(data => {
-                
-                totalData=data;
-                cargando();
-                
-       })
+    .then(data => data.json())
+    .then(data => {
+
+      totalData = data;
+      cargando();
+
+    })
 }
 
 //Mostrar Pokemones
-function principalPage(data){
-        if (Array.isArray(totalData.pokemon)) {
-                for (let i of totalData.pokemon) {
-                    root.innerHTML += `
+function principalPage(totalData) {
+  root.innerHTML = "";
+
+  for (let i of totalData) {
+    root.innerHTML += `
                     <div class = "card"
                     style = "width: 10rem;" >
                         <div class = "card-body" >
@@ -31,49 +32,29 @@ function principalPage(data){
                         <p class = "card-text" > <img class = "card-img"
                     src = "${i.img}"
                     alt = "Card ${i.name}"> </p> 
-                    </div> </div>`; modal(totalData.pokemon)
-        }}}
+                    </div> </div>`;
+    modal(totalData)
+  }
+}
 
- // FIltrado
+// FIltrado
 
- document.getElementById("filtered-type").addEventListener("change",(evento)=>{
-    evento.preventDefault();
-    let conditionType = document.getElementById("filtered-type").value;
-        pokemonFilter(window.pokemones.pokeFilter(totalData.pokemon,conditionType));
-      //  pokemonPercentage(window.pokemones.pokeFilter(totalData.pokemon,conditionType));
+document.getElementById("filtered-type").addEventListener("change", (evento) => {
+  evento.preventDefault();
+  let conditionType = document.getElementById("filtered-type").value;
+  principalPage(window.pokemones.pokeFilter(totalData.pokemon, conditionType));
 
-    })
-    function pokemonFilter(result){
-            root.innerHTML = "";
-            if (Array.isArray(result)) {
-               for (let i of result) {
-            root.innerHTML += `
-            <div class = "card"
-            style = "width: 10rem;" >
-                <div class = "card-body" >
-                <h5 class = "card-title" > ${i.name} </h5> 
-                <h6 class = "card-subtitle mb-2 text-muted" > N°${i.num} </h6> 
-                <p class = "card-text" > <img class = "card-img"
-            src = "${i.img}"
-            alt = "Card ${i.name}"> </p> 
-            </div> </div>
-             `;  modal(window.pokemones.pokeFilter(totalData.pokemon,"Grass"))
-        } 
-       }} 
-    
-       /*
-   function pokemonPercentage(){
-       compute.innerHTML = `<span class="percentage"> El <strong> ${window.pokemones.computePokemon(totalData.pokemon,"Grass")}% </strong> de los Pokemones de la región de Kanto son de Planta. </span>`
-   }*/
 
-  
- // Ordenado
-document.getElementById("order-pokemon").addEventListener("change",(event)=>{
-    event.preventDefault();
-        root.innerHTML="";
-    if (document.getElementById("order-pokemon").value === "az"){
-        for (let i of window.pokemones.orderAZ(totalData.pokemon,"name","az")){
-            root.innerHTML += `
+})
+
+
+// Ordenado
+document.getElementById("order-pokemon").addEventListener("change", (event) => {
+  event.preventDefault();
+  root.innerHTML = "";
+  if (document.getElementById("order-pokemon").value === "az") {
+    for (let i of window.pokemones.orderAZ(totalData.pokemon, "name", "az")) {
+      root.innerHTML += `
             <div class = "card"
             style = "width: 10rem;" >
                 <div class = "card-body" >
@@ -83,11 +64,13 @@ document.getElementById("order-pokemon").addEventListener("change",(event)=>{
             src = "${i.img}"
             alt = "Card ${i.name}"> </p> 
             </div> </div>
-             `; modal(window.pokemones.orderAZ(totalData.pokemon))
-        }}
-    if (document.getElementById("order-pokemon").value === "za"){
-            for (let i of window.pokemones.orderZA(totalData.pokemon,"name","za")){
-                root.innerHTML += `
+             `;
+      modal(window.pokemones.orderAZ(totalData.pokemon, "name", "az"))
+    }
+  }
+  if (document.getElementById("order-pokemon").value === "za") {
+    for (let i of window.pokemones.orderZA(totalData.pokemon, "name", "za")) {
+      root.innerHTML += `
                 <div class = "card"
                 style = "width: 10rem;" >
                     <div class = "card-body" >
@@ -97,10 +80,12 @@ document.getElementById("order-pokemon").addEventListener("change",(event)=>{
                 src = "${i.img}"
                 alt = "Card ${i.name}"> </p> 
                 </div> </div>
-                 `; modal(window.pokemones.orderAZ(totalData.pokemon))
-            }}    
-    
-    })
+                 `;
+      modal(window.pokemones.orderZA(totalData.pokemon, "name", "za"))
+    }
+  }
+
+})
 //  Modal
 function modal(data) {
   for (let i = 0; i < perfilPage.length; i++) {
@@ -177,10 +162,20 @@ function modal(data) {
                       
                     </div>
                   </div>
-                  </div>`; window.$("#myModal").modal();
+                  </div>`;
+      window.$("#myModal").modal();
     })
   }
 }
+
+
+//  Botón Buscar 
+
+document.getElementById("searching").addEventListener("click", (event) => {
+  let conditionSearch = document.getElementById("search-imput").value
+  principalPage(window.pokemones.pokeSearch(totalData.pokemon, conditionSearch))
+})
+
 
 //Estadistica
 
@@ -189,65 +184,62 @@ document.getElementById("statistics").addEventListener("click", (event) => {
   document.getElementById("root").style.display = "none"
   document.getElementById("myChart").style.display = "block"
   grafic(totalData.pokemon)
-  
-  })
-  
-  function grafic (data){
+
+})
+
+function grafic(data) {
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new window.Chart(ctx, {
-      // The type of chart we want to create
-      type: 'bar',
-  
-      // The data for our dataset
-      data: {
-          labels: ["Planta","Veneno", "Fuego", "Volador", "Agua", "Tierra", "Normal","Eléctrico","Insecto","Psíquico","Dragón","Lucha","Hielo","Roca","Fantasma"],
-          datasets: [{
-              label: "%",
-              backgroundColor:["#00541a",
-              "#930077",
-              "#f12d2d",
-              "#9bbfab",
-              "#75cac3",
-              "#a96851",
-              "#b1bed5",
-              "#f89d13",
-              "#729d39",
-              "#1a3263",
-              "#f5564e",
-              "#5f685a",
-              "#43c0ac",
-              "#c7b198",
-              "#5c3b6f"],    
-              data: [window.pokemones.computePokemon(totalData.pokemon,"Grass"),window.pokemones.computePokemon(totalData.pokemon,"Poison"),window.pokemones.computePokemon(totalData.pokemon,"Fire"),window.pokemones.computePokemon(totalData.pokemon,"Flying"),window.pokemones.computePokemon(totalData.pokemon,"Water"),window.pokemones.computePokemon(totalData.pokemon,"Ground"),window.pokemones.computePokemon(totalData.pokemon,"Normal"), window.pokemones.computePokemon(totalData.pokemon,"Electric"),window.pokemones.computePokemon(totalData.pokemon,"Bug"),window.pokemones.computePokemon(totalData.pokemon,"Psychic"),window.pokemones.computePokemon(totalData.pokemon,"Dragon"),window.pokemones.computePokemon(totalData.pokemon,"Fighting"),window.pokemones.computePokemon(totalData.pokemon,"Ice"),window.pokemones.computePokemon(totalData.pokemon,"Rock"),window.pokemones.computePokemon(totalData.pokemon,"Ghost")],
-          }]
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+      labels: ["Planta", "Veneno", "Fuego", "Volador", "Agua", "Tierra", "Normal", "Eléctrico", "Insecto", "Psíquico", "Dragón", "Lucha", "Hielo", "Roca", "Fantasma"],
+      datasets: [{
+        label: "%",
+        backgroundColor: ["#00541a",
+          "#930077",
+          "#f12d2d",
+          "#9bbfab",
+          "#75cac3",
+          "#a96851",
+          "#b1bed5",
+          "#f89d13",
+          "#729d39",
+          "#1a3263",
+          "#f5564e",
+          "#5f685a",
+          "#43c0ac",
+          "#c7b198",
+          "#5c3b6f"
+        ],
+        data: [window.pokemones.computePokemon(totalData.pokemon, "Grass"), window.pokemones.computePokemon(totalData.pokemon, "Poison"), window.pokemones.computePokemon(totalData.pokemon, "Fire"), window.pokemones.computePokemon(totalData.pokemon, "Flying"), window.pokemones.computePokemon(totalData.pokemon, "Water"), window.pokemones.computePokemon(totalData.pokemon, "Ground"), window.pokemones.computePokemon(totalData.pokemon, "Normal"), window.pokemones.computePokemon(totalData.pokemon, "Electric"), window.pokemones.computePokemon(totalData.pokemon, "Bug"), window.pokemones.computePokemon(totalData.pokemon, "Psychic"), window.pokemones.computePokemon(totalData.pokemon, "Dragon"), window.pokemones.computePokemon(totalData.pokemon, "Fighting"), window.pokemones.computePokemon(totalData.pokemon, "Ice"), window.pokemones.computePokemon(totalData.pokemon, "Rock"), window.pokemones.computePokemon(totalData.pokemon, "Ghost")],
+      }]
+    },
+
+    // Configuration options go here
+    options: {
+      title: {
+        display: true,
+        text: "% Pokemon por tipo"
       },
-  
-      // Configuration options go here
-      options: {
-          title:{
-              display:true,
-              text:"% Pokemon por tipo"
-          },
-          responsive:true,
-          scales:{
-              yAxes:[{
-                  ticks:{
-                      beginAtZero: true,
-                  }
-              }]
+      responsive: true,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
           }
+        }]
       }
-  
-  }); window.chart.update();
-  }
+    }
 
-
-
-
-  function cargando () {
-    principalPage(totalData)
-    console.log("Todos los recursos terminaron de cargar!")
+  });
+  window.chart.update();
 }
 
 
-
+function cargando() {
+  principalPage(totalData.pokemon)
+  console.log("Todos los recursos terminaron de cargar!")
+}
