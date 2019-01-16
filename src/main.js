@@ -21,6 +21,11 @@ function fetcheame() {
 //Mostrar Pokemones
 function principalPage(totalData) {
   root.innerHTML = "";
+  
+  document.getElementById("myChart").style.display = "none"
+  document.getElementById("myChart1").style.display = "none";
+  document.getElementById("root").style.display = "flex";
+ 
 
   for (let i of totalData) {
     root.innerHTML += `
@@ -51,7 +56,10 @@ document.getElementById("filtered-type").addEventListener("change", (evento) => 
 // Ordenado
 document.getElementById("order-pokemon").addEventListener("change", (event) => {
   event.preventDefault();
-  root.innerHTML = "";
+  root.innerHTML = ""
+  
+  document.getElementById("myChart").style.display = "none"
+  document.getElementById("myChart1").style.display = "none";
   if (document.getElementById("order-pokemon").value === "az") {
     for (let i of window.pokemones.orderAZ(totalData.pokemon, "name", "az")) {
       root.innerHTML += `
@@ -151,10 +159,7 @@ function modal(data) {
                         </tbody>
                         </table>
                         </div> 
-
-                        
-                         
-                         
+                                                              
                         <div class="modal-footer">
                        
                         </div>
@@ -176,6 +181,8 @@ document.getElementById("searching").addEventListener("click", (event) => {
   principalPage(window.pokemones.pokeSearch(totalData.pokemon, conditionSearch))
 })
 
+ 
+
 
 //Estadistica
 
@@ -183,13 +190,15 @@ document.getElementById("statistics").addEventListener("click", (event) => {
   event.preventDefault();
   document.getElementById("root").style.display = "none"
   document.getElementById("myChart").style.display = "block"
-  grafic(totalData.pokemon)
+  document.getElementById("myChart1").style.display = "block"
+  graficPercentage(totalData.pokemon)
+  graficWeaknesses(totalData.pokemon)
 
 })
 
-function grafic(data) {
+function graficPercentage(data) {
   var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new window.Chart(ctx, {
+  var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
 
@@ -197,7 +206,7 @@ function grafic(data) {
     data: {
       labels: ["Planta", "Veneno", "Fuego", "Volador", "Agua", "Tierra", "Normal", "Eléctrico", "Insecto", "Psíquico", "Dragón", "Lucha", "Hielo", "Roca", "Fantasma"],
       datasets: [{
-        label: "%",
+        label: "% de Pokemones",
         backgroundColor: ["#00541a",
           "#930077",
           "#f12d2d",
@@ -222,7 +231,7 @@ function grafic(data) {
     options: {
       title: {
         display: true,
-        text: "% Pokemon por tipo"
+        text: "% DE POKEMONES POR CATEGORÍAS"
       },
       responsive: true,
       scales: {
@@ -235,9 +244,63 @@ function grafic(data) {
     }
 
   });
-  window.chart.update();
+  
 }
 
+
+function graficWeaknesses(data) {
+  var ctx = document.getElementById('myChart1').getContext('2d');
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+      labels: ["Planta", "Veneno", "Fuego", "Volador", "Agua", "Tierra", "Normal", "Eléctrico", "Insecto", "Psíquico", "Dragón", "Lucha", "Hielo", "Roca", "Fantasma", "Hada", "Acero", "Oscuro"],
+      datasets: [{
+        label: "Cantidad de Pokemones",
+        backgroundColor: ["#00541a",
+          "#930077",
+          "#f12d2d",
+          "#9bbfab",
+          "#75cac3",
+          "#a96851",
+          "#b1bed5",
+          "#f89d13",
+          "#729d39",
+          "#1a3263",
+          "#f5564e",
+          "#5f685a",
+          "#43c0ac",
+          "#c7b198",
+          "#5c3b6f",
+          "#f59aa3",
+          "#373331",
+          "#000000"
+        ],
+        data: [window.pokemones.pokemonWeaknesses(totalData.pokemon, "Grass"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Poison"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Fire"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Flying"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Water"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Ground"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Normal"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Electric"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Bug"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Psychic"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Dragon"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Fighting"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Ice"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Rock"), window.pokemones.pokemonWeaknesses(totalData.pokemon, "Ghost"),window.pokemones.pokemonWeaknesses(totalData.pokemon, "Fairy"),window.pokemones.pokemonWeaknesses(totalData.pokemon, "Steel"),window.pokemones.pokemonWeaknesses(totalData.pokemon, "Dark")],
+      }]
+    },
+
+    // Configuration options go here
+    options: {
+      title: {
+        display: true,
+        text: "CANTIDAD DE POKEMONES POR DEBILIDAD"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+          }
+        }]
+      }
+    }
+
+  });
+ 
+}
 
 function cargando() {
   principalPage(totalData.pokemon)
