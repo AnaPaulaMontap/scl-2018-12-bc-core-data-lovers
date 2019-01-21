@@ -57,8 +57,25 @@ describe('pokemon.computePokemon', () => {
         window.assert.equal(window.pokemones.computePokemon(data, "Poison"),"22");
       });
 
+});
 
+describe('pokemon.pokeSearch', () => {
+  it('Debería ser una función', () => {
+    window.assert.equal(typeof window.pokemones.pokeSearch, 'function');
+  });
+  it('Debería retornar Pikachu si ingreso Pika', () => {
+    window.assert.deepEqual(window.pokemones.pokeSearch(data, "pika")[0].name,"Pikachu");
+  });
 
+});
+
+describe('pokemon.pokemonWeaknesses', () => {
+  it('Debería ser una función', () => {
+    window.assert.equal(typeof window.pokemones.pokemonWeaknesses, 'function');
+  });
+  it('Debería retornar 43 pokemones debiles al tipo Veneno', () => {
+    window.assert.equal(window.pokemones.pokemonWeaknesses(data, "Rock"),"43");
+  });
 
 });
 
